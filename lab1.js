@@ -42,8 +42,8 @@ function assert(expression, failureMessage) {
  this file a couple times to see how they work, comment them out.
  That will help later when you run jscs.
 */
-assert(1 === 1, '1 equals 1 - this assert will pass.');
-assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
+//assert(1 === 1, '1 equals 1 - this assert will pass.');
+//assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
 /* ===========================================================================
 ------------------Assertions (8 points total)---------------------------------
 ==============================================================================
@@ -54,8 +54,10 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
  zoo-themed.  Make one pass and one fail. In the failure message, describe why
  it failed.
 */
-assert('cat' === 'cat', 'Cats are equal!');
-assert('cat' === 'dog', 'Cats and dogs are not the same!');
+var cat = 'cat';
+var dog = 'dog');
+assert(cat === 'cat', 'Cats are equal!');
+assert(cat === 'dog', 'Cats and dogs are not the same!');
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
 ===========================================================================
@@ -178,7 +180,6 @@ assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
 
  Error and warning descriptions will be printed in the terminal.
  To get full points, correct all of the errors/warnings.
-
 
  Note. I got all corrected but i still have some yoda conditions... not sure how to remove those since there are no variables there XD
 */
