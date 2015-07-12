@@ -26,13 +26,11 @@
 /* ----------------- Helper ------------------------------------------------
  We've implemented a function that will help you sanity-check your code.
 */
-
 function assert(expression, failureMessage) {
   if (!expression) {
     console.log('assertion failure: ', failureMessage);
   }
 }
-
 /*
  An assertion is something we expect to be true about the state of the
  program at the point where the assertion is made.
@@ -44,10 +42,8 @@ function assert(expression, failureMessage) {
  this file a couple times to see how they work, comment them out.
  That will help later when you run jscs.
 */
-
 assert(1 === 1, '1 equals 1 - this assert will pass.');
 assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
-
 /* ===========================================================================
 ------------------Assertions (8 points total)---------------------------------
 ==============================================================================
@@ -58,35 +54,50 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
  zoo-themed.  Make one pass and one fail. In the failure message, describe why
  it failed.
 */
-
-//your code goes here
-
+assert('cat' === 'cat', 'Cats are equal!');
+assert('cat' === 'dog', 'Cats and dogs are not the same!');
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
 ===========================================================================
  Meerkats make a sort of chirping noise (according to my 30 seconds of
  research).  We're going to translate two sentences into meerkat speech.
 */
-
 var sentence1 = 'More food please.';
 var sentence2 = 'Come over here so you can scratch my belly.';
-
 /*
  Your goal is to replace the words in the above sentences with 'chirp' The
  assertions at the end of this section should pass when you're done.
  HINT: the 'split' method on String will be useful.
 */
 
-// TODO: part #1: use a for loop to replace the words in sentence 1 with
-// 'chirp' (10 points)
+function meerkatFor(englishSentence) {
+  var array = englishSentence.split(' ');
+  var meerkatSentence = '';
+  for (var i = 0;i < array.length;i++) {
+    meerkatSentence += ' chirp';
+  }
+  meerkatSentence += '.';
+  return meerkatSentence.trim();
+}
 
-// your code goes here
+sentence1 = meerkatFor(sentence1);
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
-// your code goes here
+function meerkatWhile(englishSentence) {
+  var array = englishSentence.split(' ');
+  var meerkatSentence = '';
+  var i = 0;
+  while (i < array.length) {
+    meerkatSentence += ' chirp';
+    i++ ;
+  }
+  meerkatSentence += '.';
+  return meerkatSentence.trim();
+}
 
+sentence2 = meerkatWhile(sentence2);
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
@@ -107,7 +118,8 @@ var nextAnimal;
 // TODO: 10 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
-// your code goes here
+var animalSelection = Math.floor(Math.random() * favoriteAnimals.length);
+nextAnimal = favoriteAnimals[animalSelection];
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -124,10 +136,10 @@ assert(nextAnimal, 'assign something to nextAnimal');
 // don't require quotes for the code to work. Remove the unnecessary quotes.
 
 var animalExhibitStats = {
-  'numberOpen': 13,
+  numberOpen:  13,
   'number closed': 2,
   'petting-zoo-open': true,
-  'mostPopular': 'Lucky the Emperor Penguin',
+  mostPopular: 'Lucky the Emperor Penguin',
   '2ndMostPopular': 'Dumbo the Depressed Donkey'
 };
 
@@ -138,7 +150,7 @@ var animalExhibitStats = {
  notation with dot notation wherever possible.
 */
 
-assert(animalExhibitStats['numberOpen'] === 13, 'there should be 13 open exhibits');
+assert(animalExhibitStats.numberOpen === 13, 'there should be 13 open exhibits');
 assert(animalExhibitStats['number closed'] === 2, 'there should be 2 closed exhibits');
 assert(animalExhibitStats['petting-zoo-open'], 'hey! =( i was promised meerkats!');
 assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
@@ -166,4 +178,7 @@ assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
 
  Error and warning descriptions will be printed in the terminal.
  To get full points, correct all of the errors/warnings.
+
+
+ Note. I got all corrected but i still have some yoda conditions... not sure how to remove those since there are no variables there XD
 */
