@@ -55,7 +55,7 @@ function assert(expression, failureMessage) {
  it failed.
 */
 var cat = 'cat';
-var dog = 'dog');
+var dog = 'dog';
 assert(cat === 'cat', 'Cats are equal!');
 assert(cat === 'dog', 'Cats and dogs are not the same!');
 /* ========================================================================
